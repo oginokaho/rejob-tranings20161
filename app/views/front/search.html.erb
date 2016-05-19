@@ -1,0 +1,27 @@
+<html>
+  <head>
+  <title>rejob</title>
+  </head>
+
+  <body>
+    <h1>rejob_一覧</h1>
+    <div>
+
+<select name="area_name" id="">
+  <option value="area"></option>
+</select>
+
+    <% @job.each do |job| %>　<br>
+    『<%= job.title %>』 <br><br>
+    <% end %>
+    </div>
+
+  <% Search.all.each do |area| %>
+  <a href="/list?area= <%= area.area_name %>"><%= area.area_name %></a>
+  <% end %>  <br>
+
+  <%= @job.count %>件表示しています。 <br>
+  <a href="/job">案件ページへ</a><br>
+  <p>Find me in app/views/front/show.html.erb</p>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+module SearchiesHelper
+end
