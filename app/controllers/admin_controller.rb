@@ -1,4 +1,11 @@
 class AdminController < ApplicationController
-  def do
+
+  def new
   end
+
+  def create
+  end
+
+
+
 end
