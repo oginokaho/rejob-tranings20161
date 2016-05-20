@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'admin/do'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   get 'search' => 'front#search'
   get 'job' => 'front#job'
 
+  get "front/search :search?area_name=" => "front#search"
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

@@ -4,24 +4,49 @@
   </head>
 
   <body>
-    <h1>rejob_一覧</h1>
+    <h1>rejob_求人一覧</h1>
     <div>
 
-<select name="area_name" id="">
-  <option value="area"></option>
+<p>都道府県を選択してください</p>
+
+<form  action="search" method="get">
+  <select name="area_name">
+<% Search.all.each do |area| %>
+<!-- オブジェクト.each do |変数| -->
+<!-- <a href="/search?area= -->
+<option value=<%= area.area_name %>><%= area.area_name %><br></option>
+        <% end %>
+
 </select>
+<button type="search" >検索</button>
+</form>
+
 
     <% @job.each do |job| %>　<br>
     『<%= job.title %>』 <br><br>
     <% end %>
+
     </div>
 
-  <% Search.all.each do |area| %>
-  <a href="/list?area= <%= area.area_name %>"><%= area.area_name %></a>
-  <% end %>  <br>
+    <% Search.all.each do |area| %>
 
+    <% end %>  <br>
+
+
+<div>
+  <h2>案件一覧</h2>
   <%= @job.count %>件表示しています。 <br>
-  <a href="/job">案件ページへ</a><br>
-  <p>Find me in app/views/front/show.html.erb</p>
+
+      <%= @job.each do |job| %>
+    <h3>都道府県:<%= job.area %></h3>
+    <h3>タイトル:</h3><%= job.title %>
+    <h3>詳細:</h3><%= job.description %>
+      <% end %>
+
+</div>
+
+
+  <a href="job"> 案件ページへ</a><br>
+
   </body>
 </html>

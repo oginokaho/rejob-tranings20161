@@ -59,12 +59,9 @@ Search.create(area_name:  '宮崎')
 Search.create(area_name:  '鹿児島')
 Search.create(area_name:  '沖縄')
 
-Job.create(title: '働くママさんも安心！', description: '周りには病院施設、調剤薬局などの施設が多数あり、女性のお客様の来店が非常に多いお店ですので女性の施術スタッフの方は働きやすい環境。
-',area: '東京')
-Job.create(title: '★新規Open★', description: '社内独立制度有り！ 将来独立開業したい方、FCにご興味のある方お待ちしております。
-',area: '福島')
-Job.create(title: '雰囲気', description: '都会の喧騒を忘れ、リラックスリゾートで、お客様にあなたのすばらしい癒しを提供しませんか。
-',area: '東京')
+Job.create(title: '働くママさんも安心！', description: '周りには病院施設、調剤薬局などの施設が多数あり、女性のお客様の来店が非常に多いお店ですので女性の施術スタッフの方は働きやすい環境。',area: '東京')
+Job.create(title: '★新規Open★', description: '社内独立制度有り！ 将来独立開業したい方、FCにご興味のある方お待ちしております。',area: '福島')
+Job.create(title: '雰囲気', description: '都会の喧騒を忘れ、リラックスリゾートで、お客様にあなたのすばらしい癒しを提供しませんか。',area: '東京')
 
 
 puts "nice"
