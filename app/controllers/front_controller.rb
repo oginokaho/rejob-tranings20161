@@ -5,11 +5,12 @@ class FrontController < ApplicationController
   end
 
   def search
-    @job = Job.where(area: params[:area])
           #モデル名.処理(カラム名: 内容)
-    @area = params[:area]
-
-
+    if params[:area] == nil
+      @job = Job.all
+    else
+      @job = Job.where(area: params[:area])
+    end
 
   end
 

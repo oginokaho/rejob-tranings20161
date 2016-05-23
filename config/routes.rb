@@ -17,7 +17,12 @@ Rails.application.routes.draw do
   get 'search' => 'front#search'
   get 'job' => 'front#job'
 
-  get "front/search :search?area_name=" => "front#search"
+  get 'front/search :search?area_name=' => 'front#search'
+
+
+  get 'admin' => 'admin#admin'
+  get 'admin_edit' => 'admin#admin_edit'
+  get 'admin_new' => 'admin#admin_new'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

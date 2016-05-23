@@ -1,9 +1,16 @@
 class AdminController < ApplicationController
 
-  def new
+  def admin
+    @job = Job.all
+    @job2 = Job.where(id: params[:id])
   end
 
-  def create
+  def admin_edit
+    Job.create(job)
+
+  end
+
+  def admin_new
   end
 
 

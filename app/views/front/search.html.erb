@@ -1,52 +1,31 @@
-<html>
-  <head>
-  <title>rejob</title>
-  </head>
-
-  <body>
     <h1>rejob_求人一覧</h1>
     <div>
 
 <p>都道府県を選択してください</p>
 
 <form  action="search" method="get">
-  <select name="area_name">
-<% Search.all.each do |area| %>
-<!-- オブジェクト.each do |変数| -->
-<!-- <a href="/search?area= -->
+<input name="authenticity_token" type="hidden" value="1234" />
+  <select name="area">
+  <% Search.all.each do |area| %>
 <option value=<%= area.area_name %>><%= area.area_name %><br></option>
         <% end %>
 
 </select>
 <button type="search" >検索</button>
 </form>
-
-
-    <% @job.each do |job| %>　<br>
-    『<%= job.title %>』 <br><br>
-    <% end %>
-
-    </div>
-
-    <% Search.all.each do |area| %>
-
-    <% end %>  <br>
-
+</div>
 
 <div>
   <h2>案件一覧</h2>
   <%= @job.count %>件表示しています。 <br>
 
-      <%= @job.each do |job| %>
-    <h3>都道府県:<%= job.area %></h3>
-    <h3>タイトル:</h3><%= job.title %>
-    <h3>詳細:</h3><%= job.description %>
+    <% @job.each do |job| %>
+    <a><%= job.title %></a><br>
+    <a><%= job.description %></a><br>
+    <a><%= job.area %></a><br><br>
       <% end %>
 
 </div>
 
 
   <a href="job"> 案件ページへ</a><br>
-
-  </body>
-</html>
