@@ -21,8 +21,13 @@ Rails.application.routes.draw do
 
 
   get 'admin' => 'admin#admin'
-  get 'admin_edit' => 'admin#admin_edit'
-  get 'admin_new' => 'admin#admin_new'
+  get 'admin_edit' => 'admin#update'
+  get 'admin_new' => 'admin#new'
+
+  post 'jobs' => "admin#admin_new"
+
+  post 'edit_through' => "admin#edit_through"
+  get 'destroy_through' => "admin#destroy_through"
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

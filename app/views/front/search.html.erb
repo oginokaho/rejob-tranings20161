@@ -5,13 +5,13 @@
 
 <form  action="search" method="get">
 <input name="authenticity_token" type="hidden" value="1234" />
-  <select name="area">
+  <select name="area" name="name" >
   <% Search.all.each do |area| %>
-<option value=<%= area.area_name %>><%= area.area_name %><br></option>
+<option value="<%= area.area_name %>"><%= area.area_name %><br></option>
         <% end %>
 
 </select>
-<button type="search" >検索</button>
+<button type="search" >検索</buton>
 </form>
 </div>
 
