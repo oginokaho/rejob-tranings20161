@@ -63,5 +63,8 @@ Job.create(title: '働くママさんも安心！', description: '周りには�
 Job.create(title: '★新規Open★', description: '社内独立制度有り！ 将来独立開業したい方、FCにご興味のある方お待ちしております。',area: '福島')
 Job.create(title: '雰囲気', description: '都会の喧騒を忘れ、リラックスリゾートで、お客様にあなたのすばらしい癒しを提供しませんか。',area: '東京')
 
+User.create(name: '山田　花子', age: '22', sex: '女性')
+User.create(name: '田中　りえ', age: '25', sex: '女性')
+
 
 puts "nice"

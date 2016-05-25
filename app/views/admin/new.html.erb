@@ -1,14 +1,13 @@
     <h1>管理画面＿新規作成ページ</h1>
 
-    <form  action="new" method="get">
+    <form  action="new_through" method="post">
     <input name="authenticity_token" type="hidden" value="1234" />
-
-      タイトル：<input type="text" name="title" size="40">　<br>
-      詳細：<input type="text" name="description" size="80">  <br>
+      タイトル：<input type="text" name="title"  size="40">　<br>
+      詳細：<input type="text" name="description"  size="80">  <br>
       エリア：<input type="text" name="area" size="80">  <br>
 
-        <a href=""><button type="submit" name="job">送信</button>
-    </form></a>
+    <button action="new_through" method="post">送信</button>
+    </form>
 
 
     <a href="/admin">管理画面topページへ</a>

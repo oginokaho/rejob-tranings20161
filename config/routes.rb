@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   get 'admin/do'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -28,6 +30,14 @@ Rails.application.routes.draw do
 
   post 'edit_through' => "admin#edit_through"
   get 'destroy_through' => "admin#destroy_through"
+  post 'new_through' => "admin#new_through"
+
+
+
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

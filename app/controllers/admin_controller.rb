@@ -12,7 +12,7 @@ class AdminController < ApplicationController
   end
 
 
-  def through
+  def edit_through
     @job = Job.find_by(id: params[:id])
     if
       @job.update(title: params[:title],
@@ -20,15 +20,20 @@ class AdminController < ApplicationController
         area: params[:area])
       redirect_to '/admin'
     end
-
   end
 
 
   def new
-    @job = Job.find_by(id: params[:id]).destroy
-    redirect_to '/admin'
+    @job = Job.find_by(id: params[:id])
   end
 
+
+  def new_through
+    if
+    Job.create(title: params[:title], description: params[:description], area: params[:area])
+    redirect_to '/admin'
+  end
+  end
 
 
   def destroy_through

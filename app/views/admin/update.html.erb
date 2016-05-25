@@ -1,4 +1,3 @@
-
     <h1>管理画面＿求人編集ページ</h1>
 
     <form  action="edit_through?id=<%= @job.id %>" method="post">
@@ -16,7 +15,7 @@
 
 
     <a href="destroy_through"></a>
-    <button action="destroy?id=<%= @job.id %>" method="get">削除</button>
+    <button action="destroy_through?id=<%= @job.id %>" method="get">削除</button>
     <input name="authenticity_token" type="hidden" value="1234" />
 
     <a href="destroy_through?id=<%= @job.id %>">削除</a><br><br>
