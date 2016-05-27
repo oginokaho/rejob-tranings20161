@@ -15,5 +15,6 @@ class FrontController < ApplicationController
   end
 
   def job
+
   end
 end

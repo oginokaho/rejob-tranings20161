@@ -1,31 +1,34 @@
-    <h1>rejob_求人一覧</h1>
-    <div>
+<br><!-- このviewで何が取れているのかの確認 -->
+<%= @job.map{|a| a.title} if @job.present? %>
 
-<p>都道府県を選択してください</p>
+<h1>rejob_求人一覧</h1>
+<div>
 
-<form  action="search" method="get">
-<input name="authenticity_token" type="hidden" value="1234" />
-  <select name="area" name="name" >
-  <% Search.all.each do |area| %>
-<option value="<%= area.area_name %>"><%= area.area_name %><br></option>
-        <% end %>
+  <p>都道府県を選択してください</p>
 
-</select>
-<button type="search" >検索</buton>
-</form>
+  <form  action="search" method="get">
+    <input name="authenticity_token" type="hidden" value="1234" />
+    <select name="area" name="name" >
+      <% Search.all.each do |area| %>
+        <option value="<%= area.area_name %>"><%= area.area_name %><br></option>
+      <% end %>
+    </select>
+    <button type="search" >検索</buton>
+  </form>
 </div>
 
 <div>
   <h2>案件一覧</h2>
-  ▼<%= @job.count %>件表示しています。 <br>
+  ▼<%= @job.count %>件表示しています。 <br><br>
 
     <% @job.each do |job| %>
-    <a><%= job.title %></a><br>
-    <a><%= job.description %></a><br>
-    <a><%= job.area %></a><br><br>
+    <a href="/job?id=<%= job.id %>"><%= job.title %></a><br>
+    <a>詳細　：<%= job.description %></a><br>
+    <a>エリア：</a>
+      <a href="/search?area=<%= job.area %>"><%= job.area %></a><br><br>
       <% end %>
 
+
+
+
 </div>
-
-
-  <a href="job"> 案件ページへ</a><br>

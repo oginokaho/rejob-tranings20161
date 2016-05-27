@@ -7,7 +7,7 @@
       エリア：<input type="text" name="area" value="<%= @job.area %>" size="80">  <br>
 
 
-      <button action="edit_through?id=<%= @job.id %>" method="post">
+      <button action="edit_through?id=<%= @job.id %>" >
       <input name="authenticity_token" type="hidden" value="1234" />
         更新
       </button>
@@ -15,7 +15,7 @@
 
 
     <a href="destroy_through"></a>
-    <button action="destroy_through?id=<%= @job.id %>" method="get">削除</button>
+    <button action="destroy_through?id=<%= @job.id %>">削除</button>
     <input name="authenticity_token" type="hidden" value="1234" />
 
     <a href="destroy_through?id=<%= @job.id %>">削除</a><br><br>

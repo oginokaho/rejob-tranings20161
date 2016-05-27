@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(version: 20160524082134) do
   end
 
   create_table "user_logins", force: true do |t|
-    t.string   "uuid"
     t.string   "name"
+    t.string   "pass"
+    t.integer  "age"
+    t.string   "sex"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

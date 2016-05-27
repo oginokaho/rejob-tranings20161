@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'search' => 'front#search'
   get 'job' => 'front#job'
 
-  get 'front/search :search?area_name=' => 'front#search'
+  get 'front/search' => 'front#search'
 
 
   get 'admin' => 'admin#admin'
@@ -34,9 +34,16 @@ Rails.application.routes.draw do
 
 
 
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  get 'login'   => 'sessions#login'
+  get 'login_through' => 'sessions#login_through'
+
+  get 'mypage' => 'sessions#mypage'
+
+  delete 'mypage'  => 'sessions#logout'
+  get 'mypage' => 'sessions#logout_through'
+
+  get 'entry' => 'entry#entry'
+
 
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
