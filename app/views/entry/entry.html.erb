@@ -1,6 +1,15 @@
-<br>エントリーフォーム
+<h1>エントリーフォーム</h1>
 
+
+PR文
+</pre>
 <br><br>
-<a href="/entry">
-  <button type="new">応募</button>
-</a><br><br>
+
+<form  action="entry" method="post">
+</form>
+
+<br>
+<form action="/entry_confirm?=<%=  %>" method=get>
+    <input name="job_id" type="hidden" value="<%= session[:id]%>" />
+  <button >確認ページへ</button>
+</form><br><br>

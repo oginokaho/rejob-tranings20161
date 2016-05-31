@@ -2,15 +2,15 @@ class SessionsController < ApplicationController
   def new
   end
 
+
   def login
   end
 
 
   def login_through
-    user = UserLogin.find_by(name: params[:name])
+    user = User.find_by(name: params[:name])
     if user && user.pass == params[:pass]
-    #  fail
-      session[:userlogin_id] = user.id
+      session[:user_id] = user.id
       redirect_to "/mypage?id=#{user.id}"
     else
       flash[:danger] = "ログインできませんでした。"
@@ -18,8 +18,14 @@ class SessionsController < ApplicationController
     end
   end
 
+
   def mypage
-    @user = UserLogin.find(session[:userlogin_id])
+    @entry = Entry.where(user_id: params[:id])
+    @user = User.find(session[:user_id])
+    if session[:user_id] != nil
+    else
+      redirect_to '/login'
+    end
   end
 
 
@@ -30,7 +36,8 @@ class SessionsController < ApplicationController
 
 
   def logout
-    cookies.delete(:remember_token)
+    #cookies.delete(:remember_token)
+    session[:user_id] = nil
     redirect_to "/top"
   end
 end

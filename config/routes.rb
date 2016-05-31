@@ -39,10 +39,12 @@ Rails.application.routes.draw do
 
   get 'mypage' => 'sessions#mypage'
 
-  delete 'mypage'  => 'sessions#logout'
-  get 'mypage' => 'sessions#logout_through'
+  get 'logout'  => 'sessions#logout'
+  #get 'mypage' => 'sessions#logout_through'
 
   get 'entry' => 'entry#entry'
+  get 'entry_confirm' => 'enrty#entry_confirm'
+  get 'entry_confirm' => 'entry#entry_confirm_through'
 
 
 

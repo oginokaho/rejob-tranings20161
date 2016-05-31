@@ -1,7 +1,48 @@
-    <h1>rejob_top</h1>
-    <a href="/search">一覧ページへ</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>REJOB_top</title>
+  </head>
+  <body>
+    <ul class="header-top__navi">
+          <li><a href="/lp/new_inquiry">求人掲載のお問い合わせ</a></li>
+          <li><a href="https://client.relax-job.com/auth/login">企業様ログイン</a></li>
+            <li><a href="/mypage/login" rel="nofollow">求職者様ログイン</a></li>
+        </ul>
+    <a class="header-middle__logo" href="/"><img class="logo_header" src="/images/user_frontend/pc/logo_header.png" alt="Logo header"></a>
+    <img class="logo_header" src="/images/user_frontend/pc/logo_header.png" alt="Logo header">
+    <a class="header-middle__logo" href="/"><img class="logo_header" src="/images/user_frontend/pc/logo_header.png" alt="Logo header"></a>
+      <h1>rejob_top</h1>
+        <a href="/search">一覧ページへ</a>
+        <br>
+        <a href="/login">ログインページ</a>
 
-    link_to '', :controller => 'front', :action => 'search', :id => 1
+
+        <div class="cols_4"><button name="button" type="submit" class="btn btn--xsmall btn--pt3 w-100px">カンタン検索</button>
+                      <a href="/search_form" rel="nofollow" class="quick_search__inner__detail">詳しい条件で検索</a>
+                    </div>
+
+                    <div class="cols_6 f_left">
+                      <dl class="footer-nav">
+
+                      </dl>
+
+        <span class="go-top" id="scroll-top"></span>
+
+        <div class="copyright">
+      <div class="container t_left">
+        <small>© REJOB Co.,Ltd. All Rights Reserved.</small>
+      </div>
+    </div>
+
+                    </div>
 
 
-    <p>Find me in app/views/front/search.html.erb</p>
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+
+        link_to '', :controller => 'front', :action => 'search', :id => 1
+        <p>Find me in app/views/front/search.html.erb</p>
+  </body>
+</html>

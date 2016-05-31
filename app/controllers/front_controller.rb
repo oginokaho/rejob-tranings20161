@@ -15,6 +15,7 @@ class FrontController < ApplicationController
   end
 
   def job
+    @job = Job.find_by(id: params[:id])
 
   end
 end

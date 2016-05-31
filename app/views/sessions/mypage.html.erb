@@ -1,15 +1,19 @@
+<br>
+<%= @user.name %>さん ログイン中
+ <form action="logout">
+   <input type="submit" value="ログアウト">
+ </form>
+
+
 <h1>mypage</h1>
 ID: <%= @user.id %> <br>
 ユーザー名:  <%= @user.name %><br>
 <応募履歴>
-
+<%= @entry.count %>件
 
 
 
 
 
 <br><br><br>
- <%= @user.name %>さん ログイン中
-  <form action="logout_through">
-    <input type="submit" value="ログアウト">
-  </form>
+<a href="/search">求人をさがす</a>

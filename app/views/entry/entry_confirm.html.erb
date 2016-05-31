@@ -1,0 +1,15 @@
+<h1>王の確認ページ</h1>
+User.name <br>
+Job.title <br>
+PR文 <br>
+
+
+
+<br><br>
+
+
+
+<form action="entry_confirm?job_id=<%= params[:job_id] %>" method="get">
+  <input name="job_id" type="hidden" value="<%= params[:id]%>" />
+<button type="submit" name="entry_confirm">送信</button>
+</form>

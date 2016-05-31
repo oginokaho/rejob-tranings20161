@@ -17,21 +17,13 @@
 
 
     <% @job.each do |job| %>
-      <a>
-        <a href="/job?id=<%= job.id %>"><%= job.title %></a>
-      </a>
-
-          <a href="/admin_edit?id=<%= job.id %>">
+      <a href="/job?id=<%= job.id %>"><%= job.title %></a>
+            <a href="/admin_edit?id=<%= job.id %>">
           <button type="edit" >編集</button>
-          </a><br>
-
-      <a>
-        <%= job.description %>
-      </a><br>
-
-      <a>
-        エリア:<%= job.area %>
-      </a><br><br>
+            </a><br>
+      <a><%= job.description %> </a>
+      応募数：<%= Job.find_by(id: job.id).entry.count %><br>
+      <a>エリア:<%= job.area %></a><br><br>
 
     <% end %>
 
