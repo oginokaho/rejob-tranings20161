@@ -8,9 +8,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= params if params.present? %>
-<%= "user_id=" +  session[:user_id].to_s if session[:user_id].present? %>
+  <div class="header-top">
+    <%= params if params.present? %>
+    <%= "user_id=" +  session[:user_id].to_s if session[:user_id].present? %>
+      <div class="container">
+        <ul class="header-top__navi">
+          <li><a href="/login">ログインしてマイページへ</a></li>
+          <li><a href="/login_new" rel="nofollow">無料会員登録</a></li>
+        </ul>
+      </div>
+    </div>
 
+<br>
 
 <%= yield %>
 

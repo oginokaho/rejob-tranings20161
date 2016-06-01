@@ -22,7 +22,7 @@
           <button type="edit" >編集</button>
             </a><br>
       <a><%= job.description %> </a>
-      応募数：<%= Job.find_by(id: job.id).entry.count %><br>
+      応募数：<%= Job.find_by(id: job.id).entries.count %><br>
       <a>エリア:<%= job.area %></a><br><br>
 
     <% end %>

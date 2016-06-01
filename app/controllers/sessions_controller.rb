@@ -4,6 +4,10 @@ class SessionsController < ApplicationController
 
 
   def login
+    if session[:user_id] == nil
+    else
+      redirect_to "/mypage?id=#{session[:user_id]}"
+    end
   end
 
 
@@ -21,10 +25,10 @@ class SessionsController < ApplicationController
 
   def mypage
     @entry = Entry.where(user_id: params[:id])
-    @user = User.find(session[:user_id])
-    if session[:user_id] != nil
+    @user = User.find_by(id: params[:id])
+    if session[:user_id] == params[:id].to_i
     else
-      redirect_to '/login'
+      redirect_to "/login"
     end
   end
 

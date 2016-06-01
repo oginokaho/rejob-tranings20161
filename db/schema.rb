@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20160530035905) do
   end
 
   create_table "admins", force: true do |t|
+    t.string   "user_id"
+    t.string   "job_id"
+    t.string   "title"
+    t.string   "description"
+    t.string   "area"
+    t.string   "name"
+    t.string   "pass"
+    t.integer  "age"
+    t.string   "sex"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

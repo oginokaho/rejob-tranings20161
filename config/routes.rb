@@ -38,8 +38,8 @@ Rails.application.routes.draw do
   get 'login_through' => 'sessions#login_through'
 
   get 'mypage' => 'sessions#mypage'
-
   get 'logout'  => 'sessions#logout'
+  get 'sighnup' => 'sessions#sighnup'
   #get 'mypage' => 'sessions#logout_through'
 
   get 'entry' => 'entry#entry'
