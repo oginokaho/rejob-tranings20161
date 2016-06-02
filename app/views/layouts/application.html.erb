@@ -13,15 +13,25 @@
     <%= "user_id=" +  session[:user_id].to_s if session[:user_id].present? %>
       <div class="container">
         <ul class="header-top__navi">
-          <li><a href="/login">ログインしてマイページへ</a></li>
-          <li><a href="/login_new" rel="nofollow">無料会員登録</a></li>
+          <li><a href="/top">TOPページ</a></li>
+          <li><a href="/login">マイページ</a></li>
+          <li><a href="/sighnup" rel="nofollow">無料会員登録</a></li>
         </ul>
       </div>
     </div>
 
 <br>
+  <div class="header-middle container clear">
+<a class="header-middle__logo" href="/">
+<img hreh= "/top" class="logo_header" src="https://relax-job.com/images/user_frontend/pc/logo_header.png" alt="Logo header" ></a>
+
+</div>
+
+<div class="content mt_30">
 
 <%= yield %>
+
+</div>
 
 </body>
 </html>

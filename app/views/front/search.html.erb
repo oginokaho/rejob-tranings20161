@@ -1,8 +1,30 @@
 <br><!-- このviewで何が取れているのかの確認 -->
-<%= @job.map{|a| a.title} if @job.present? %>
+<!-- <%= @job.map{|a| a.title} if @job.present? %> -->
 
-<h1>rejob_求人一覧</h1>
-<div>
+<head>
+<style type="text/css">
+
+h1 {
+margin: 0px 20px;
+padding: 0;
+}
+
+section,p {
+margin: 0px 60px;
+padding: 0;
+}
+
+form {
+margin: 0px 60px;
+padding: 0;
+}
+
+</style>
+</head>
+
+<div class=content data-job-source="false">
+<h1 classheading1-pt1>検索ページ</h1>
+
 
   <p>都道府県を選択してください</p>
 
@@ -17,13 +39,13 @@
   </form>
 </div>
 
+        <br><p>▼<%= @job.count %>件 表示しています。</p>
 
 <section class="box-pt1 mb_20">
         <div class="heading2-pt2 heading2-pt2--border-bt">
           <h2>案件一覧</h2>
 
-          <p>▼<%= @job.count %>件表示しています。</p> <br><br>
-
+        </div>
         <% @job.each do |job| %>
         <dl class="list-dl-pt3 list-dl-pt3--dt9em txt_size_12">
           <h4><a href="/job?id=<%= job.id %>"><%= job.title %></a></h4>
@@ -31,7 +53,7 @@
             <dd>
               <ul class="ul-inline ul-inline--cut">
                 <li>
-                    <a><%= job.description %></a>
+                    <%= job.description %>
                 </li>
               </ul>
             </dd>
@@ -46,19 +68,5 @@
         </dl>
           <br>
         <% end %>
-        </div>
+
       </section>
-
-
-<div>
-  <h1 class="txt_size_18 mb_30">案件一覧</h1>
-  ▼<%= @job.count %>件表示しています。 <br><br>
-
-    <% @job.each do |job| %>
-  <a href="/job?id=<%= job.id %>"><%= job.title %></a><br>
-    <a>詳細　：<%= job.description %></a><br>
-    <a>エリア：</a>
-      <a href="/search?area=<%= job.area %>"><%= job.area %></a><br><br>
-    <% end %>
-
-</div>

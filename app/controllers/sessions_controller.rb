@@ -25,7 +25,9 @@ class SessionsController < ApplicationController
 
   def mypage
     @entry = Entry.where(user_id: params[:id])
+    @job = Job.where(id: @entry.pluck(:job_id))
     @user = User.find_by(id: params[:id])
+
     if session[:user_id] == params[:id].to_i
     else
       redirect_to "/login"
@@ -43,5 +45,21 @@ class SessionsController < ApplicationController
     #cookies.delete(:remember_token)
     session[:user_id] = nil
     redirect_to "/top"
+  end
+
+
+  def sighnup
+    @user = User.find_by(id: params[:id])
+  end
+
+
+  def sighnup_through
+    if
+      user = User.create(name: params[:name], age: params[:age].to_i , sex: params[:sex], pass:params[:pass])
+      redirect_to "/mypage?id=#{user.id}"
+    else
+      flash[:danger] = "登録できませんでした"
+      redirect_to '/sighnup'
+    end
   end
 end

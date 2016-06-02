@@ -1,10 +1,11 @@
+<%= stylesheet_link_tag "inside/stories", :media => "all" %>
     <h1>管理画面＿求人編集ページ</h1>
 
     <form  action="edit_through?id=<%= @job.id %>" method="post">
     <input name="authenticity_token" type="hidden" value="1234" />
-      タイトル：<input type="text" name="title" value="<%= @job.title %>" size="40">　<br>
-      詳細：<input type="text" name="description" value="<%= @job.description %>" size="80">  <br>
-      エリア：<input type="text" name="area" value="<%= @job.area %>" size="80">  <br>
+      タイトル：<input type="text" name="title" value="<%= @job.title %>" size="40">　<br><br>
+      詳細：<input type="text" name="description" value="<%= @job.description %>" size="80">  <br><br>
+      エリア：<input type="text" name="area" value="<%= @job.area %>" size="80">  <br><br>
 
 
       <button action="edit_through?id=<%= @job.id %>" >
@@ -22,3 +23,4 @@
 
     <a href="/admin_new">新規作成ページへ</a>
     <a href="/admin">管理画面topページへ</a>
+<br><br><br><br><br><br><br><br>

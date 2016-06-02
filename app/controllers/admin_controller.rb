@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
 
+
   def admin
     @job = Job.all
     @job2 = Job.where(id: params[:id])

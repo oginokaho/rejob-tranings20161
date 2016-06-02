@@ -1,9 +1,10 @@
+<%= stylesheet_link_tag "inside/stories", :media => "all" %>
     <h1>管理画面＿新規作成ページ</h1>
 
     <form  action="new_through" method="post">
     <input name="authenticity_token" type="hidden" value="1234" />
-      タイトル：<input type="text" name="title"  size="40">　<br>
-      詳細：<input type="text" name="description"  size="80">  <br>
+      タイトル：<input type="text" name="title"  size="40">　<br><br>
+      詳細：<input type="text" name="description"  size="80">  <br><br>
       エリア：<input type="text" name="area" size="80">  <br>
 
     <button action="new_through" method="post">送信</button>
@@ -11,3 +12,4 @@
 
 
     <a href="/admin">管理画面topページへ</a>
+<br><br><br><br><br><br><br><br>

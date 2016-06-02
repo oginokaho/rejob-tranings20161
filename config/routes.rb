@@ -32,15 +32,13 @@ Rails.application.routes.draw do
   get 'destroy_through' => "admin#destroy_through"
   post 'new_through' => "admin#new_through"
 
-
-
   get 'login'   => 'sessions#login'
   get 'login_through' => 'sessions#login_through'
 
   get 'mypage' => 'sessions#mypage'
   get 'logout'  => 'sessions#logout'
   get 'sighnup' => 'sessions#sighnup'
-  #get 'mypage' => 'sessions#logout_through'
+  post 'sighnup_through' => 'sessions#sighnup_through'
 
   get 'entry' => 'entry#entry'
   get 'entry_confirm' => 'enrty#entry_confirm'

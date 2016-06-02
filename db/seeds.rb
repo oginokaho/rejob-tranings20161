@@ -64,8 +64,20 @@ Job.create(title: '働くママさんも安心！', description: '周りには�
 Job.create(title: '★新規Open★', description: '社内独立制度有り！ 将来独立開業したい方、FCにご興味のある方お待ちしております。',area: '福島')
 Job.create(title: '雰囲気', description: '都会の喧騒を忘れ、リラックスリゾートで、お客様にあなたのすばらしい癒しを提供しませんか。',area: '東京')
 
-User.create(name: '山田　花子', pass: 'rejob01', age: '22', sex: '女性')
-User.create(name: '田中　りえ', pass: 'rejob02', age: '25', sex: '女性')
+User.create(name: '樋口一葉', pass: 'rejob01', age: '22', sex: '女性')
+User.create(name: '夏目漱石', pass: 'rejob02', age: '25', sex: '男性')
+User.create(name: '東野圭吾', pass: 'rejob03', age: '25', sex: '女性')
+User.create(name: '湊かなえ', pass: 'rejob04', age: '25', sex: '女性')
+User.create(name: '太宰治', pass: 'rejob05', age: '25', sex: '女性')
+User.create(name: '三島由紀夫', pass: 'rejob06', age: '25', sex: '女性')
+
+
+
+
+
+Entry.create(user_id:'1', job_id:'1')
+Entry.create(user_id:'1', job_id:'2')
+Entry.create(user_id:'5', job_id:'1')
 
 
 puts "nice"

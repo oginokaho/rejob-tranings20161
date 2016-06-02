@@ -1,19 +1,45 @@
+<h1 class="txt_size_18 mb_30">mypage</h1>
 <br>
+<div class="content mt_30">
 <%= @user.name %>さん ログイン中
  <form action="logout">
    <input type="submit" value="ログアウト">
  </form>
-
-
-<h1>mypage</h1>
+<br><br>
+＜登録情報＞<br>
 ID: <%= @user.id %> <br>
-ユーザー名:  <%= @user.name %><br>
-<応募履歴>
-<%= @entry.count %>件
+ユーザー名:  <%= @user.name %>さん
+<br><br><br>
+＜応募履歴＞<br><br>
 
 
 
+
+<% @job.each do |job| %>
+<dl class="list-dl-pt3 list-dl-pt3--dt9em txt_size_12">
+  <h4><a href="/job?id=<%= job.try(:id) %>"><%= job.try(:title) %></a></h4>
+  <dt>詳細</dt>
+    <dd>
+      <ul class="ul-inline ul-inline--cut">
+        <li>
+            <%= job.try(:description) %>
+        </li>
+      </ul>
+    </dd>
+  <dt>エリア</dt>
+    <dd>
+      <ul class="ul-inline ul-inline--cut">
+        <li>
+            <a href="/search?area=<%= job.try(:area) %>"><%= job.try(:area) %></a>
+        </li>
+    </ul>
+  </dd>
+</dl>
+  <br>
+<% end %>
 
 
 <br><br><br>
-<a href="/search">求人をさがす</a>
+<a href="/search">▶︎&nbsp;求人をさがす</a>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

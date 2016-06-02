@@ -1,14 +1,13 @@
+
     <h1>
       rejob_管理画面
     </h1>
 
-    <h2>
+    <h2 class="heading1-pt1">
       求人案件一覧
     </h2>
 
-  </select>
-  <button type="search" >検索</buton>
-  </form>
+
   <br>
 
     <a href="/admin_new">
@@ -19,16 +18,15 @@
     <% @job.each do |job| %>
       <a href="/job?id=<%= job.id %>"><%= job.title %></a>
             <a href="/admin_edit?id=<%= job.id %>">
-          <button type="edit" >編集</button>
+          <button type="view" ><a href="/job?id=<%= job.id %>">view</a></button>
+          <button type="edit" ><a href="/admin_edit?id=<%= job.id %>">編集</button>
             </a><br>
-      <a><%= job.description %> </a>
+      <%= job.description %>
       応募数：<%= Job.find_by(id: job.id).entries.count %><br>
-      <a>エリア:<%= job.area %></a><br><br>
+      エリア:<%= job.area %><br><br>
 
     <% end %>
 
 
 
-
-<h1>Admin#do</h1>
-<p>Find me in app/views/admin/do.html.erb</p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

@@ -15,7 +15,7 @@ class EntryController < ApplicationController
     if session[:user_id].present?
       redirect_to "mypage?id=#{session[:user_id]}"
     else
-      flash[:danger] = "無料会員登録で、応募できます！"
+      flash[:notice] = "無料会員登録で、応募できます！"
       redirect_to "login"
 
     end
